@@ -31,7 +31,7 @@ services:
     build:
       context: ./scraping
     volumes:
-      - ../data:/output
+      - ./data:/output
     profiles: ["ingest"]
 
   api:
