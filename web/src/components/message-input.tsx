@@ -40,7 +40,7 @@ export function MessageInput({ onSend, disabled }: MessageInputProps) {
         disabled={disabled || text.trim() === ""}
         className="bg-primary text-primary-foreground rounded-lg px-5 py-3 text-base font-medium transition-opacity disabled:opacity-40"
       >
-        Send
+        Dream
       </button>
     </div>
   );
