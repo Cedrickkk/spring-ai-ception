@@ -18,7 +18,7 @@ createRoot(document.getElementById("root")!).render(
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
         <ChatHeader />
-        <main className="mx-auto flex h-svh w-full max-w-2xl flex-col pt-20 text-left">
+        <main className="mx-auto flex h-svh w-full max-w-4xl flex-col pt-20 text-left">
           <ChatWindow />
         </main>
       </QueryClientProvider>
