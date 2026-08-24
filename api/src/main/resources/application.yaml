@@ -2,6 +2,10 @@ spring:
   application:
     name: api
 
+  mvc:
+    async:
+      request-timeout: -1
+
   datasource:
     url: jdbc:postgresql://localhost:5432/spring_ai_ception_db
     username: postgres
@@ -12,6 +16,7 @@ spring:
       base-url: http://localhost:11434
       chat:
         model: qwen2.5:7b
+        temperature: 0.2
       embedding:
         model: nomic-embed-text
       init:
