@@ -44,6 +44,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/spring_ai_ception_db
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
+      - APP_INGEST_DOCS_PATH=/data/docs.jsonl
     volumes:
       - ./data:/data:ro
     depends_on:

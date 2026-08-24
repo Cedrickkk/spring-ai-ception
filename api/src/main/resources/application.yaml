@@ -1,3 +1,45 @@
 spring:
   application:
     name: api
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_ai_ception_db
+    username: postgres
+    password: postgres
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen2.5:7b
+      embedding:
+        model: nomic-embed-text
+      init:
+        pull-model-strategy: when_missing
+
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        dimensions: 768
+        index-type: hnsw
+        distance-type: cosine_distance
+
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+
+app:
+  ingest:
+    docs-path: ${APP_INGEST_DOCS_PATH:../data/docs.jsonl}
+    chunk-size: 800
+    min-chunk-size-chars: 350
+  rag:
+    similarity-threshold: 0.5
+
+logging:
+  level:
+    org:
+      springframework:
+        ai: DEBUG
